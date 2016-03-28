@@ -262,7 +262,7 @@ var jobsdir string
 var buildnumber int
 
 func init() {
-	flag.StringVar(&jobsdir, "jobsdir", "/var/lib/jenkins", "Jenkins job directory that contains the builds/ subdirectory")
+	flag.StringVar(&jobsdir, "jobsdir", "/var/lib/jenkins/jobs", "Jenkins jobs directory that contains the subdirectory of the specified job")
 	flag.IntVar(&buildnumber, "buildnumber", 0, "build number of logs to tail (default latest)")
 }
 
