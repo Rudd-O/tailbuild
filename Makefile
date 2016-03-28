@@ -15,5 +15,8 @@ dist: clean
 rpm: dist
 	T=`mktemp -d` && rpmbuild --define "_topdir $$T" -ta tailbuild-`awk '/^Version:/ {print $$2}' tailbuild.spec`.tar.gz || { rm -rf "$$T"; exit 1; } && mv "$$T"/RPMS/*/* "$$T"/SRPMS/* . || { rm -rf "$$T"; exit 1; } && rm -rf "$$T"
 
+srpm: dist
+	T=`mktemp -d` && rpmbuild --define "_topdir $$T" -ts tailbuild-`awk '/^Version:/ {print $$2}' tailbuild.spec`.tar.gz || { rm -rf "$$T"; exit 1; } && mv "$$T"/SRPMS/* . || { rm -rf "$$T"; exit 1; } && rm -rf "$$T"
+
 install: all
 	install -Dm 755 tailbuild -t $(DESTDIR)/$(BINDIR)/
