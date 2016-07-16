@@ -333,7 +333,7 @@ func main() {
 				tailers = newtailers
 			} else {
 				line := formatter.Format(t.filename, bytearray)
-				fmt.Printf(line)
+				fmt.Printf("%s", line)
 			}
 		}
 	}
