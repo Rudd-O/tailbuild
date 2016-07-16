@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name:           tailbuild
-Version:        0.1.1
+Version:        0.1.2
 Release:        1%{?dist}
 Summary:        A Jenkins build log tailer
 
